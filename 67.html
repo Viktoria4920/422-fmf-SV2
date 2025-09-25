@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Анализ чисел</title>
+    <style>
+        body {
+            font-family: Arial;
+            margin: 20px;
+        }
+        h1 {
+            color: blue;
+        }
+        input {
+            padding: 5px;
+            margin: 5px;
+            width: 80px;
+        }
+        button {
+            padding: 8px;
+            margin: 10px;
+        }
+        div {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Анализ трех чисел</h1>
+    
+    <h2>Задача 1: Найти самое большое число</h2>
+    <p>Введите три числа:</p>
+    <input type="number" id="a1">
+    <input type="number" id="a2">
+    <input type="number" id="a3">
+    <br>
+    <button onclick="zadacha1()">Найти самое большое</button>
+    <div id="otvet1"></div>
+    
+    <h2>Задача 2: Найти два числа с самой большой суммой</h2>
+    <p>Введите три числа:</p>
+    <input type="number" id="b1">
+    <input type="number" id="b2">
+    <input type="number" id="b3">
+    <br>
+    <button onclick="zadacha2()">Найти числа</button>
+    <div id="otvet2"></div>
+
+    <script>
+        // Первая задача - найти самое большое число
+        function zadacha1() {
+            let chislo1 = Number(document.getElementById("a1").value);
+            let chislo2 = Number(document.getElementById("a2").value);
+            let chislo3 = Number(document.getElementById("a3").value);
+            
+            if (!chislo1 || !chislo2 || !chislo3) {
+                alert("Введите все три числа!");
+                return;
+            }
+            
+            let samoeBolshoe;
+            
+            if (chislo1 >= chislo2 && chislo1 >= chislo3) {
+                samoeBolshoe = chislo1;
+            } else if (chislo2 >= chislo1 && chislo2 >= chislo3) {
+                samoeBolshoe = chislo2;
+            } else {
+                samoeBolshoe = chislo3;
+            }
+            
+            document.getElementById("otvet1").innerHTML = 
+                "Самое большое число: " + samoeBolshoe;
+        }
+        
+        // Вторая задача - найти два числа с самой большой суммой
+        function zadacha2() {
+            let x = Number(document.getElementById("b1").value);
+            let y = Number(document.getElementById("b2").value);
+            let z = Number(document.getElementById("b3").value);
+            
+            if (!x || !y || !z) {
+                alert("Введите все три числа!");
+                return;
+            }
+            
+            let pervoeChislo, vtoroeChislo;
+            
+            if (x <= y && x <= z) {
+                pervoeChislo = y;
+                vtoroeChislo = z;
+            }
+            else if (y <= x && y <= z) {
+                pervoeChislo = x;
+                vtoroeChislo = z;
+            }
+            else {
+                pervoeChislo = x;
+                vtoroeChislo = y;
+            }
+            
+            let summa = pervoeChislo + vtoroeChislo;
+            
+            document.getElementById("otvet2").innerHTML = 
+                "Два числа с самой большой суммой: " + pervoeChislo + " и " + vtoroeChislo + 
+                "<br>Их сумма: " + summa;
+        }
+    </script>
+</body>
+</html>
