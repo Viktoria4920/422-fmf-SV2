@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+<div>
+    <form> 
+        <label for="name"> Название пиццы </label>
+        <br>
+
+        <input 
+            type="text" 
+            placeholder="Название пиццы" 
+            id="name">
+        <br>
+    
+        <button id="add" onclick="add()" type="button"> Добавить </button>
+        
+    </form>
+</div>
+
+    <div>
+        <p> Заказы </p>
+        <ul id="orders">
+            <li> 4 сезона <input type="checkbox"></li>
+        
+        </ul>
+    </div>
+
+    <script>
+        //console.log('Hi!');    
+
+        let nameInput = document.getElementById("name");
+
+        function add() {
+            console.log.nameInput.value 
+        }
+    </script>
+
+</body>
+</html>
